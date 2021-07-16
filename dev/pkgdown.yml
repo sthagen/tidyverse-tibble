@@ -1,15 +1,15 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1.9001
-pkgdown_sha: 8e0838e273462cec420dfa20f240c684a33425d9
+pkgdown_sha: ce9781a15c7ea07df9fb17a11295ba4abec0b54b
 articles:
   extending: extending.html
   formats: formats.html
   invariants: invariants.html
   tibble: tibble.html
   types: types.html
-  wip/subassign: subassign.html
-  wip/subset: subset.html
-last_built: 2021-04-18T07:50Z
+  subassign: wip/subassign.html
+  subset: wip/subset.html
+last_built: 2021-07-16T09:03Z
 urls:
   reference: https://tibble.tidyverse.org/reference
   article: https://tibble.tidyverse.org/articles
