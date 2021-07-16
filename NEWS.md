@@ -1,8 +1,15 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# tibble 3.1.1.9000
+# tibble 3.1.2.9000
 
-- Same as previous version.
+- Bump required versions of ellipsis and vctrs to avoid warning during package load.
+
+- `new_tibble()` is now faster (#901, @mgirlich).
+
+
+# tibble 3.1.2
+
+- Bump required versions of ellipsis and vctrs to avoid warning during package load.
 
 
 # tibble 3.1.1
