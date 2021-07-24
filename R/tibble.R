@@ -148,9 +148,7 @@ tibble <- function(...,
                    .name_repair = c("check_unique", "unique", "universal", "minimal")) {
   xs <- quos(...)
 
-  is.null <- map_lgl(xs, quo_is_null)
-
-  tibble_quos(xs[!is.null], .rows, .name_repair)
+  tibble_quos(xs, .rows, .name_repair)
 }
 
 #' tibble_row()
@@ -168,11 +166,9 @@ tibble <- function(...,
 #' tibble_row(a = 1, lm = lm(Petal.Width ~ Petal.Length + Species, data = iris))
 tibble_row <- function(...,
                        .name_repair = c("check_unique", "unique", "universal", "minimal")) {
-  xs <- quos(...)
+  xs <- enquos(...)
 
-  is.null <- map_lgl(xs, quo_is_null)
-
-  tibble_quos(xs[!is.null], .rows = 1, .name_repair = .name_repair, single_row = TRUE)
+  tibble_quos(xs, .rows = 1, .name_repair = .name_repair, single_row = TRUE)
 }
 
 #' Test if the object is a tibble
@@ -258,6 +254,10 @@ tibble_quos <- function(xs, .rows, .name_repair, single_row = FALSE) {
   }
 
   names(output) <- col_names
+
+  is_null <- map_lgl(output, is.null)
+  output <- output[!is_null]
+
   output <- splice_dfs(output)
   output <- set_repaired_names(output, repair_hint = TRUE, .name_repair = .name_repair)
 
@@ -325,7 +325,7 @@ error_tibble_row_size_one <- function(j, name, size) {
     desc <- paste0("at position ", j)
   }
 
-  tibble_error(bullets(
+  tibble_error(problems(
     "All vectors must be size one, use `list()` to wrap.",
     paste0("Column ", desc, " is of size ", size, ".")
   ))
@@ -350,12 +350,10 @@ error_incompatible_size <- function(.rows, vars, vars_len, rows_source) {
     paste0("Size ", x, ": ", pluralise_commas(text, y))
   })
 
-  problems <- set_default_name(problems, "")
-
-  tibble_error(problems(
+  tibble_error(bullets(
     "Tibble columns must have compatible sizes:",
     if (!is.null(.rows)) paste0("Size ", .rows, ": ", rows_source),
     problems,
-    i = "Only values of size one are recycled"
+    info = "Only values of size one are recycled."
   ))
 }
