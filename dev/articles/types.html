@@ -55,7 +55,7 @@
         <a class="navbar-brand" href="../index.html">tibble</a>
         <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org" class="external-link">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">3.1.3.9000</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">3.1.4.9000</span>
         </div>
       </div>
     </div>
@@ -78,7 +78,13 @@
       <a href="../articles/types.html">Data types</a>
     </li>
     <li>
-      <a href="../articles/invariants.html">Invariants</a>
+      <a href="../articles/invariants.html">Comparing behavior with data frames</a>
+    </li>
+    <li>
+      <a href="../articles/numbers.html">Controlling display of numbers</a>
+    </li>
+    <li>
+      <a href="../articles/digits.html">Comparing display with data frames</a>
     </li>
   </ul>
 </li>
@@ -351,8 +357,8 @@
 #&gt; $ `named list`  &lt;named list&gt; 1
 #&gt; $ factor        &lt;fct&gt; A
 #&gt; $ ordered       &lt;ord&gt; a
-#&gt; $ Date          &lt;date&gt; 2021-07-24
-#&gt; $ POSIXt        &lt;dttm&gt; 2021-07-24 06:30:04
+#&gt; $ Date          &lt;date&gt; 2021-09-12
+#&gt; $ POSIXt        &lt;dttm&gt; 2021-09-12 08:29:26
 #&gt; $ difftime      &lt;drtn&gt; 1 secs
 #&gt; $ hms           &lt;time&gt; 00:00:01
 #&gt; $ integer64     &lt;int64&gt; 10000000000
@@ -373,7 +379,7 @@
 <code class="sourceCode R"><span class="fu">pillar</span><span class="fu">:::</span><span class="va">type_sum.default</span>
 <span class="co">#&gt; function (x) </span>
 <span class="co">#&gt; {</span>
-<span class="co">#&gt;     pillar_attr &lt;- attr(x, "pillar")</span>
+<span class="co">#&gt;     pillar_attr &lt;- attr(x, "pillar", exact = TRUE)</span>
 <span class="co">#&gt;     label &lt;- pillar_attr$label</span>
 <span class="co">#&gt;     if (!is.null(label)) {</span>
 <span class="co">#&gt;         return(I(label))</span>
@@ -388,7 +394,7 @@
 <span class="co">#&gt;             "sym"</span>
 <span class="co">#&gt;         }, typeof(x))</span>
 <span class="co">#&gt; }</span>
-<span class="co">#&gt; &lt;bytecode: 0x5599eed0ed60&gt;</span>
+<span class="co">#&gt; &lt;bytecode: 0x561dc85e2d88&gt;</span>
 <span class="co">#&gt; &lt;environment: namespace:pillar&gt;</span></code></pre></div>
 </div>
   </div>
