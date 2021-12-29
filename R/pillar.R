@@ -61,7 +61,7 @@
 #'
 #' # Maximum digits after the decimal points
 #' tibble(
-#'   x0 = num(9:11 * 100 + 0.5, digits =  0),
+#'   x0 = num(9:11 * 100 + 0.5, digits = 0),
 #'   x1 = num(9:11 * 100 + 0.5, digits = -1),
 #'   x2 = num(9:11 * 100 + 0.5, digits = -2),
 #' )
@@ -76,8 +76,8 @@
 #' # Scale
 #' tibble(
 #'   small  = num(9:11 / 1000 + 0.00005, label = "%", scale = 100),
-#'   medium = num(9:11 /  100 + 0.0005 , label = "%", scale = 100),
-#'   large  = num(9:11 /   10 + 0.005  , label = "%", scale = 100)
+#'   medium = num(9:11 / 100 + 0.0005, label = "%", scale = 100),
+#'   large  = num(9:11 / 10 + 0.005, label = "%", scale = 100)
 #' )
 #'
 #' # Notation
@@ -92,7 +92,7 @@
 #' tibble(
 #'   scimin = num(10^(-7:6) * 123, notation = "sci", fixed_exponent = -Inf),
 #'   engmin = num(10^(-7:6) * 123, notation = "eng", fixed_exponent = -Inf),
-#'   simin  = num(10^(-7:6) * 123, notation = "si",  fixed_exponent = -Inf)
+#'   simin  = num(10^(-7:6) * 123, notation = "si", fixed_exponent = -Inf)
 #' )
 #'
 #' tibble(
@@ -110,6 +110,16 @@
 #' )
 # Assigned in .onLoad()
 num <- NULL
+
+#' set_num_opts
+#'
+#' `set_num_opts()` adds formatting options to an arbitrary numeric vector,
+#' useful for composing with other types.
+#'
+#' @export
+#' @rdname num
+# Assigned in .onLoad()
+set_num_opts <- NULL
 
 #' Format a character vector
 #'
@@ -161,8 +171,18 @@ num <- NULL
 #' tibble(
 #'   back = char(lipsum, shorten = "back"),
 #'   front = char(lipsum, shorten = "front"),
-#'   mid   = char(lipsum, shorten = "mid")
+#'   mid = char(lipsum, shorten = "mid")
 #' )
 #' tibble(abbr = char(lipsum, shorten = "abbreviate"))
 # Assigned in .onLoad()
 char <- NULL
+
+#' set_char_opts
+#'
+#' `set_char_opts()` adds formatting options to an arbitrary character vector,
+#' useful for composing with other types.
+#'
+#' @export
+#' @rdname char
+# Assigned in .onLoad()
+set_char_opts <- NULL

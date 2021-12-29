@@ -1,8 +1,16 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# tibble 3.1.5.9000
+# tibble 3.1.6.9000
 
 - Same as previous version.
+
+
+# tibble 3.1.6
+
+- `set_num_opts()` and `set_char_opts()` are reexported from pillar (#959).
+- `view()` uses `rlang::expr_deparse(width = Inf)` to avoid errors with long `|>` pipes (#957).
+- `new_tibble()` checks that the `nrow` argument is nonnegative and less than 2^31 (#916).
+- `tbl_sum.tbl_df()` has an ellipsis in its formals for extensibility.
 
 
 # tibble 3.1.5

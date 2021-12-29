@@ -2,9 +2,17 @@
 % Please edit documentation in R/pillar.R
 \name{char}
 \alias{char}
+\alias{set_char_opts}
 \title{Format a character vector}
 \usage{
 char(
+  x,
+  ...,
+  min_chars = NULL,
+  shorten = c("back", "front", "mid", "abbreviate")
+)
+
+set_char_opts(
   x,
   ...,
   min_chars = NULL,
@@ -35,6 +43,9 @@ or without width restrictions, and where the abbreviation style can be configure
 
 The formatting is applied when the vector is printed or formatted,
 and also in a tibble column.
+
+\code{set_char_opts()} adds formatting options to an arbitrary character vector,
+useful for composing with other types.
 }
 \examples{
 # Display as a vector:
@@ -64,7 +75,7 @@ lipsum <- unlist(strsplit(stringi::stri_rand_lipsum(1), "(?<=[.]) +", perl = TRU
 tibble(
   back = char(lipsum, shorten = "back"),
   front = char(lipsum, shorten = "front"),
-  mid   = char(lipsum, shorten = "mid")
+  mid = char(lipsum, shorten = "mid")
 )
 tibble(abbr = char(lipsum, shorten = "abbreviate"))
 \dontshow{\}) # examplesIf}

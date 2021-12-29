@@ -9,7 +9,7 @@ tbl_subset_matrix <- function(x, j, j_arg) {
   values <- map2(x[col_idx], cells[col_idx], vec_slice)
 
   # Also checks conformity of vectors:
-  unname(vec_c(!!!values, .name_spec = ~ .x))
+  unname(vec_c(!!!values, .name_spec = ~.x))
 }
 
 tbl_subassign_matrix <- function(x, j, value, j_arg, value_arg) {
@@ -30,7 +30,6 @@ tbl_subassign_matrix <- function(x, j, value, j_arg, value_arg) {
     for (j in col_idx) {
       x[[j]] <- vectbl_assign(x[[j]], cells[[j]], value)
     },
-
     vctrs_error_incompatible_type = function(cnd) {
       cnd_signal(error_assign_incompatible_type(x, rep(list(value), j), j, value_arg, cnd_message(cnd)))
     }

@@ -1,6 +1,6 @@
 Package: tibble
 Title: Simple Data Frames
-Version: 3.1.5.9000
+Version: 3.1.6.9000
 Authors@R: 
     c(person(given = "Kirill",
              family = "M\u00fcller",
@@ -75,3 +75,6 @@ RoxygenNote: 7.1.2
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 Config/testthat/start-first: subsetting, as_tibble, add, invariants
+Config/autostyle/scope: line_breaks
+Config/autostyle/strict: true
+Config/Needs/website: tidyverse/tidytemplate

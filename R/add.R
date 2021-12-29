@@ -120,21 +120,20 @@ rbind_at <- function(old, new, pos) {
 #' # You can't overwrite existing columns
 #' try(df %>% add_column(x = 4:6))
 #'
-
 #' # You can't create new observations
 #' try(df %>% add_column(z = 1:5))
 #'
 #' @export
 add_column <- function(.data, ..., .before = NULL, .after = NULL,
                        .name_repair = c("check_unique", "unique", "universal", "minimal")) {
-
   if (!is.data.frame(.data)) {
     deprecate_warn("2.1.1", "add_column(.data = 'must be a data frame')")
   }
 
   if (has_length(.data) && (!is_named(.data) || anyDuplicated(names2(.data))) && missing(.name_repair)) {
     deprecate_warn("3.0.0", "add_column(.data = 'must have unique names')",
-      details = 'Use `.name_repair = "minimal"`.')
+      details = 'Use `.name_repair = "minimal"`.'
+    )
     .name_repair <- "minimal"
   }
 

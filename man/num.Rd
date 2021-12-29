@@ -2,9 +2,22 @@
 % Please edit documentation in R/pillar.R
 \name{num}
 \alias{num}
+\alias{set_num_opts}
 \title{Format a numeric vector}
 \usage{
 num(
+  x,
+  ...,
+  sigfig = NULL,
+  digits = NULL,
+  label = NULL,
+  scale = NULL,
+  notation = c("fit", "dec", "sci", "eng", "si"),
+  fixed_exponent = NULL,
+  extra_sigfig = NULL
+)
+
+set_num_opts(
   x,
   ...,
   sigfig = NULL,
@@ -70,6 +83,9 @@ The formatting is applied when the vector is printed or formatted,
 and also in a tibble column.
 The formatting annotation and the class survives most arithmetic transformations,
 the most notable exceptions are \code{\link[=var]{var()}} and \code{\link[=sd]{sd()}}.
+
+\code{set_num_opts()} adds formatting options to an arbitrary numeric vector,
+useful for composing with other types.
 }
 \examples{
 # Display as a vector
@@ -84,7 +100,7 @@ tibble(
 
 # Maximum digits after the decimal points
 tibble(
-  x0 = num(9:11 * 100 + 0.5, digits =  0),
+  x0 = num(9:11 * 100 + 0.5, digits = 0),
   x1 = num(9:11 * 100 + 0.5, digits = -1),
   x2 = num(9:11 * 100 + 0.5, digits = -2),
 )
@@ -99,8 +115,8 @@ tibble(
 # Scale
 tibble(
   small  = num(9:11 / 1000 + 0.00005, label = "\%", scale = 100),
-  medium = num(9:11 /  100 + 0.0005 , label = "\%", scale = 100),
-  large  = num(9:11 /   10 + 0.005  , label = "\%", scale = 100)
+  medium = num(9:11 / 100 + 0.0005, label = "\%", scale = 100),
+  large  = num(9:11 / 10 + 0.005, label = "\%", scale = 100)
 )
 
 # Notation
@@ -115,7 +131,7 @@ tibble(
 tibble(
   scimin = num(10^(-7:6) * 123, notation = "sci", fixed_exponent = -Inf),
   engmin = num(10^(-7:6) * 123, notation = "eng", fixed_exponent = -Inf),
-  simin  = num(10^(-7:6) * 123, notation = "si",  fixed_exponent = -Inf)
+  simin  = num(10^(-7:6) * 123, notation = "si", fixed_exponent = -Inf)
 )
 
 tibble(

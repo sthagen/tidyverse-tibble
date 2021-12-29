@@ -70,9 +70,10 @@ NULL
 
 #' @export
 as.data.frame.tbl_df <- function(x, row.names = NULL, optional = FALSE, ...) {
-  class(x) <- "data.frame"
+  class(x) <- tibble_class
   unname <- which(!map_lgl(x, is_bare_list))
-  x[unname] <- map(x[unname], vectbl_set_names, NULL)
+  x[unname] <- map(.subset(x, unname), vectbl_set_names, NULL)
+  class(x) <- "data.frame"
   x
 }
 
@@ -89,14 +90,16 @@ as.data.frame.tbl_df <- function(x, row.names = NULL, optional = FALSE, ...) {
   cnd <- cnd_names_non_null(value)
   if (!is.null(cnd)) {
     deprecate_soft("3.0.0", "tibble::`names<-`(value = 'can\\'t be NULL')",
-      details = cnd$message)
+      details = cnd$message
+    )
 
     # FIXME: value <- rep("", length(x))
   }
 
   if (!has_length(value, length(x))) {
     deprecate_soft("3.0.0", "tibble::`names<-`(value = 'must have the same length as `x`')",
-      details = error_names_must_have_length(length(value), length(x))$message)
+      details = error_names_must_have_length(length(value), length(x))$message
+    )
 
     # FIXME: Reset NA to "" in names
 
@@ -110,7 +113,8 @@ as.data.frame.tbl_df <- function(x, row.names = NULL, optional = FALSE, ...) {
   cnd <- cnd_names_non_na(value)
   if (!is.null(cnd)) {
     deprecate_soft("3.0.0", "tibble::`names<-`(value = 'can\\'t be empty')",
-      details = cnd$message)
+      details = cnd$message
+    )
 
     # FIXME: Reset NA to "" in names
   }
