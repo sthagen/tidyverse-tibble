@@ -100,7 +100,7 @@ When you print a tibble, it only shows the first ten rows and all the columns th
 It also prints an abbreviated description of the column type, and uses font styles and color for highlighting:
 
 ```{r}
-tibble(x = -5:100, y = 123.456 * (3 ^ x))
+tibble(x = -5:100, y = 123.456 * (3^x))
 ```
 
 Numbers are displayed with three significant figures by default, and a trailing dot that indicates the existence of a fractional component.

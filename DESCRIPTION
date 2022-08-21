@@ -5,7 +5,8 @@ Authors@R:
     c(person(given = "Kirill",
              family = "M\u00fcller",
              role = c("aut", "cre"),
-             email = "krlmlr+r@mailbox.org"),
+             email = "kirill@cynkra.com",
+             comment = c(ORCID = "0000-0002-1416-3412")),
       person(given = "Hadley",
              family = "Wickham",
              role = "aut",
@@ -76,4 +77,5 @@ Config/testthat/parallel: true
 Config/testthat/start-first: subsetting, as_tibble, add, invariants
 Config/autostyle/scope: line_breaks
 Config/autostyle/strict: true
+Config/autostyle/rmd: false
 Config/Needs/website: tidyverse/tidytemplate
