@@ -741,13 +741,13 @@ test_that("converting from matrix uses implicit row names when `rownames =` is p
 })
 
 test_that("output test", {
-  expect_snapshot_with_error({
+  expect_snapshot(error = TRUE, {
     as_tibble(list(1))
     as_tibble(list(1, 2))
     as_tibble(list(a = 1, 2))
     as_tibble(as.list(1:26))
     as_tibble(set_names(list(1), "..1"))
-    as_tibble(set_names(list(1:26), paste0("..", 1:26)))
+    as_tibble(set_names(as.list(1:26), paste0("..", 1:26)))
     as_tibble(list(a = 1, a = 1))
     as_tibble(list(a = 1, a = 1, b = 1, b = 1))
     as_tibble(list(a = new_environment()))
@@ -757,7 +757,7 @@ test_that("output test", {
     as_tibble_row(list(a = 1, 2))
     as_tibble_row(as.list(1:26))
     as_tibble_row(set_names(list(1), "..1"))
-    as_tibble_row(set_names(list(1:26), paste0("..", 1:26)))
+    as_tibble_row(set_names(as.list(1:26), paste0("..", 1:26)))
     as_tibble_row(list(a = 1, a = 1))
     as_tibble_row(list(a = 1, a = 1, b = 1, b = 1))
     as_tibble_row(list(a = new_environment()))

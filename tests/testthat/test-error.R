@@ -9,14 +9,15 @@ test_that("tibble_error()", {
       class = c("tibble_error_foo", "tibble_error"),
       message = "message",
       foo = 42,
-      bar = 7
+      bar = 7,
+      use_cli_format = TRUE
     )
   )
 })
 
 test_that("output test", {
   expect_snapshot({
-    invalid_df("must be integer", "col", "\nFix this.")
+    invalid_df("must be integer", "col", "Fix this.")
     invalid_df("must be numeric", c("col1", "col2"))
 
     use_repair(TRUE)

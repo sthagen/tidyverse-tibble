@@ -11,7 +11,6 @@
       #   qsec <dbl>, vs <dbl>,
       #   am <dbl>, gear <dbl>,
       #   carb <dbl>
-      # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 
 ---
 
@@ -27,7 +26,6 @@
       #   abbreviated variable
       #   names ¹​Sepal.Width,
       #   ²​Petal.Length
-      # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 
 ---
 
@@ -43,7 +41,6 @@
       #   abbreviated variable
       #   names ¹​Sepal.Length,
       #   ²​Sepal.Width, …
-      # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 
 ---
 
@@ -59,7 +56,6 @@
       #   names ¹​Sepal.Length,
       #   ²​Sepal.Width,
       #   ³​Petal.Length
-      # ℹ Use `colnames()` to see all variable names
 
 ---
 
@@ -69,7 +65,6 @@
       # A tibble: 150 × 5
       <body created by pillar>
       # … with 140 more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -79,7 +74,6 @@
       # A tibble: ?? × 5
       <body created by pillar>
       # … with more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -105,7 +99,6 @@
       # A tibble: ?? × 5
       <body created by pillar>
       # … with more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -118,7 +111,6 @@
       #   e <fct>, f <date>,
       #   g <dttm>, h <list>,
       #   i <list>
-      # ℹ Use `colnames()` to see all variable names
 
 ---
 
@@ -136,7 +128,6 @@
       # A tibble: 10,000 × 1
       <body created by pillar>
       # … with 9,995 more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -147,7 +138,6 @@
       <body created by pillar>
       # … with 2 variables:
       #   a <chr>, b <lgl>
-      # ℹ Use `colnames()` to see all variable names
 
 ---
 
@@ -156,7 +146,6 @@
     Output
       # A tibble: 150 × 0
       <body created by pillar>
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -171,7 +160,6 @@
       #   Petal.Length <dbl>,
       #   Petal.Width <dbl>,
       #   Species <fct>
-      # ℹ Use `colnames()` to see all variable names
 
 ---
 
@@ -182,7 +170,6 @@
       <body created by pillar>
       # … with at least 5 rows
       #   total
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -192,7 +179,6 @@
       # A tibble: ?? × 1
       <body created by pillar>
       # … with more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 ---
 
@@ -241,7 +227,6 @@
       7 2016-01-01 12:35:03 2016-01-01 12:35:03
       8 2016-01-01 12:35:04 2016-01-01 12:35:04
       # … with 4 more rows
-      # ℹ Use `print(n = ...)` to see more rows
 
 # trunc_mat for wide-character columns (#100)
 

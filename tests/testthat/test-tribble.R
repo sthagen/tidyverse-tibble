@@ -167,6 +167,7 @@ test_that("names stripped at appropriate time (#775)", {
 })
 
 test_that("lubridate::Period (#784)", {
+  skip_if_not_installed("lubridate")
   expect_equal(
     tribble(~x, lubridate::days(1), lubridate::days(2)),
     tibble(x = lubridate::days(1:2))
@@ -174,6 +175,7 @@ test_that("lubridate::Period (#784)", {
 })
 
 test_that("formattable (#785)", {
+  skip_if_not_installed("formattable")
   expect_equal(
     tribble(~x, formattable::formattable(1.0, 1), formattable::formattable(2.0, 1)),
     tibble(x = formattable::formattable(1:2 + 0, 1))
@@ -225,7 +227,7 @@ test_that("tribble and frame_matrix cannot have named arguments", {
 })
 
 test_that("output test", {
-  expect_snapshot_with_error({
+  expect_snapshot(error = TRUE, {
     tribble(1)
     tribble(~a, ~b, 1)
     tribble(a ~ b, 1)
