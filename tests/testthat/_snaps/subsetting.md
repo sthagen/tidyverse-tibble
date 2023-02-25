@@ -72,7 +72,9 @@
       foo[c(1:3, NA)]
     Condition
       Error in `foo[c(1:3, NA)]`:
-      ! Can't use NA as column index with `[` at position 4.
+      ! Can't subset columns with `c(1:3, NA)`.
+      x Subscript `c(1:3, NA)` can't contain missing values.
+      x It has a missing value at location 4.
     Code
       foo[as.matrix(1)]
     Condition
@@ -173,7 +175,9 @@
       foo[c(TRUE, TRUE, NA)]
     Condition
       Error in `foo[c(TRUE, TRUE, NA)]`:
-      ! Can't use NA as column index with `[` at position 3.
+      ! Can't subset columns with `c(TRUE, TRUE, NA)`.
+      x Subscript `c(TRUE, TRUE, NA)` can't contain missing values.
+      x It has a missing value at location 3.
     Code
       foo[as.matrix(TRUE)]
     Condition
@@ -423,11 +427,6 @@
       x `as.list(1:3)` must be logical, numeric, or character, not a list.
     Code
       foo[factor(1:3)] <- 1
-    Condition
-      Error in `[<-`:
-      ! Can't assign to columns that don't exist.
-      x Columns `1`, `2`, and `3` don't exist.
-    Code
       foo[Sys.Date()] <- 1
     Condition
       Error in `[<-`:
@@ -495,12 +494,16 @@
       df[NA] <- 3
     Condition
       Error in `[<-`:
-      ! Can't use NA as column index with `[` at positions 1 and 2.
+      ! Can't assign columns with `NA`.
+      x Subscript `NA` can't contain missing values.
+      x It has a missing value at location 1.
     Code
       df[NA, ] <- 3
     Condition
       Error in `[<-`:
-      ! Can't use NA as row index in a tibble for assignment.
+      ! Can't assign rows with `NA`.
+      x Subscript `NA` can't contain missing values.
+      x It has a missing value at location 1.
     Code
       # # [<-.tbl_df and logical indexes
       df <- tibble(x = 1:2, y = x)

@@ -129,9 +129,9 @@ test_that("[.tbl_df is careful about column indexes (#83)", {
       foo[-4],
       class = "vctrs_error_subscript_oob"
     )
-    expect_tibble_abort(
+    expect_error(
       foo[c(1:3, NA)],
-      abort_na_column_index(4)
+      class = "vctrs_error_subscript_type"
     )
 
     expect_error(foo[as.matrix(1)])
@@ -156,9 +156,9 @@ test_that("[.tbl_df is careful about column flags (#83)", {
       foo[c(TRUE, TRUE, FALSE, FALSE)],
       class = "vctrs_error_subscript_size"
     )
-    expect_tibble_abort(
+    expect_error(
       foo[c(TRUE, TRUE, NA)],
-      abort_na_column_index(3)
+      class = "vctrs_error_subscript_type"
     )
 
     expect_tibble_abort(
@@ -403,6 +403,7 @@ test_that("can use classed character indexes (#778)", {
   expect_null(df[[mychr("c")]])
 
   expect_silent(df[mychr(letters[1:2])] <- df)
+  expect_silent(df[mychr(letters[3:4])] <- df)
   expect_silent(df[[mychr("c")]] <- 1)
   expect_silent(df[[mychr("a")]] <- df[["a"]])
 })
@@ -413,7 +414,8 @@ test_that("can use classed integer indexes (#778)", {
   expect_identical(df[myint(1:3), myint(1:2)], df)
   expect_identical(df[[myint(2)]], df[[2]])
 
-  expect_silent(df[mylgl(TRUE), ] <- df)
+  expect_silent(df[myint(1:2)] <- df)
+  expect_silent(df[myint(3:4)] <- list(c = 4, d = 5))
   expect_silent(df[[myint(2)]] <- df[[2]])
   expect_silent(df[[myint(3)]] <- 1)
 })
@@ -422,6 +424,8 @@ test_that("can use classed logical indexes (#778)", {
   df <- tibble::tibble(a = 1:3, b = LETTERS[1:3])
 
   expect_identical(df[mylgl(TRUE), mylgl(TRUE)], df)
+
+  expect_silent(df[mylgl(TRUE), ] <- df)
   expect_silent(df[mylgl(TRUE), mylgl(TRUE)] <- df)
 })
 
@@ -514,15 +518,15 @@ test_that("[<-.tbl_df throws an error with duplicate indexes (#658)", {
     df <- tibble(x = 1:2, y = x)
     expect_tibble_abort(
       df[c(1, 1)] <- 3,
-      abort_duplicate_column_subscript_for_assignment(c(1, 1))
+      abort_assign_duplicate_column_subscript(c(1, 1))
     )
     expect_tibble_abort(
       df[, c(1, 1)] <- 3,
-      abort_duplicate_column_subscript_for_assignment(c(1, 1))
+      abort_assign_duplicate_column_subscript(c(1, 1))
     )
     expect_tibble_abort(
       df[c(1, 1), ] <- 3,
-      abort_duplicate_row_subscript_for_assignment(c(1, 1))
+      abort_assign_duplicate_row_subscript(c(1, 1))
     )
   })
 })

@@ -1805,9 +1805,9 @@ with_tbl(tbl[[4]] <- 0)
 with_df(df[[5]] <- 0)
 #> Warning in format.data.frame(if
 #> (omit) x[seq_len(n0), , drop =
-#> FALSE] else x, : corrupt data frame:
-#> columns will be truncated or padded
-#> with NAs
+#> FALSE] else x, : corrupt data
+#> frame: columns will be truncated or
+#> padded with NAs
 #>    n c         li      V5
 #> 1  1 e          9 NULL  0
 #> 2 NA f     10, 11 <NA>  0
@@ -2263,10 +2263,10 @@ with_tbl(tbl[1:2] <- list(1))
 
 ```r
 with_df(df[1:2] <- list(0, 0, 0))
-#> Warning in `[<-.data.frame`(`*tmp*`,
-#> 1:2, value = list(0, 0, 0)):
-#> provided 3 variables to replace 2
-#> variables
+#> Warning in
+#> `[<-.data.frame`(`*tmp*`, 1:2,
+#> value = list(0, 0, 0)): provided 3
+#> variables to replace 2 variables
 #>   n c         li
 #> 1 0 0          9
 #> 2 0 0     10, 11
@@ -2364,7 +2364,9 @@ with_df(df[NA] <- list("x"))
 ```r
 with_tbl(tbl[NA] <- list("x"))
 #> Error in `[<-`:
-#> ! Can't use NA as column index with `[` at positions 1, 2, and 3.
+#> ! Can't assign columns with `NA`.
+#> x Subscript `NA` can't contain missing values.
+#> x It has a missing value at location 1.
 ```
 
 </td></tr><tr style="vertical-align:top"><td>
@@ -3044,27 +3046,27 @@ with_df(df[1] <- lm(mpg ~ wt, data = mtcars))
 #> Warning in
 #> `[<-.data.frame`(`*tmp*`, 1, value
 #> = structure(list(coefficients =
-#> c(`(Intercept)` = 37.285126167342, :
-#> replacement element 2 has 32 rows to
-#> replace 4 rows
+#> c(`(Intercept)` = 37.285126167342,
+#> : replacement element 2 has 32 rows
+#> to replace 4 rows
 #> Warning in
 #> `[<-.data.frame`(`*tmp*`, 1, value
 #> = structure(list(coefficients =
-#> c(`(Intercept)` = 37.285126167342, :
-#> replacement element 3 has 32 rows to
-#> replace 4 rows
+#> c(`(Intercept)` = 37.285126167342,
+#> : replacement element 3 has 32 rows
+#> to replace 4 rows
 #> Warning in
 #> `[<-.data.frame`(`*tmp*`, 1, value
 #> = structure(list(coefficients =
-#> c(`(Intercept)` = 37.285126167342, :
-#> replacement element 5 has 32 rows to
-#> replace 4 rows
+#> c(`(Intercept)` = 37.285126167342,
+#> : replacement element 5 has 32 rows
+#> to replace 4 rows
 #> Warning in
 #> `[<-.data.frame`(`*tmp*`, 1, value
 #> = structure(list(coefficients =
-#> c(`(Intercept)` = 37.285126167342, :
-#> replacement element 7 has 5 rows to
-#> replace 4 rows
+#> c(`(Intercept)` = 37.285126167342,
+#> : replacement element 7 has 5 rows
+#> to replace 4 rows
 #> Error in `[<-.data.frame`(`*tmp*`, 1, value = structure(list(coefficients = c(`(Intercept)` = 37.285126167342, : replacement element 10 has 3 rows, need 4
 ```
 
@@ -3313,7 +3315,9 @@ with_df(df[NA, ] <- df[1, ])
 ```r
 with_tbl(tbl[NA, ] <- tbl[1, ])
 #> Error in `[<-`:
-#> ! Can't use NA as row index in a tibble for assignment.
+#> ! Can't assign rows with `NA`.
+#> x Subscript `NA` can't contain missing values.
+#> x It has a missing value at location 1.
 ```
 
 </td></tr></tbody></table>
@@ -3734,10 +3738,10 @@ with_tbl(tbl[2:3, 1] <- tbl[1:2, 2])
 
 ```r
 with_df(df[2:3, 2] <- df[1:2, 3])
-#> Warning in `[<-.data.frame`(`*tmp*`,
-#> 2:3, 2, value = list(9, 10:11)):
-#> provided 2 variables to replace 1
-#> variables
+#> Warning in
+#> `[<-.data.frame`(`*tmp*`, 2:3, 2,
+#> value = list(9, 10:11)): provided 2
+#> variables to replace 1 variables
 #>    n c         li
 #> 1  1 e          9
 #> 2 NA 9     10, 11
@@ -3760,10 +3764,11 @@ with_tbl(tbl[2:3, 2] <- tbl[1:2, 3])
 
 ```r
 with_df(df[2:3, 3] <- df2[1:2, 1])
-#> Warning in `[<-.data.frame`(`*tmp*`,
-#> 2:3, 3, value = structure(list(n
-#> = c(1L, : provided 3 variables to
-#> replace 1 variables
+#> Warning in
+#> `[<-.data.frame`(`*tmp*`, 2:3, 3,
+#> value = structure(list(n = c(1L, :
+#> provided 3 variables to replace 1
+#> variables
 #>    n c   li
 #> 1  1 e    9
 #> 2 NA f    1
@@ -3786,10 +3791,10 @@ with_tbl(tbl[2:3, 3] <- tbl2[1:2, 1])
 
 ```r
 with_df2(df2[2:3, 1] <- df2[1:2, 2])
-#> Warning in matrix(value, n, p): data
-#> length [8] is not a sub-multiple or
-#> multiple of the number of columns
-#> [3]
+#> Warning in matrix(value, n, p):
+#> data length [8] is not a
+#> sub-multiple or multiple of the
+#> number of columns [3]
 #>   tb.n tb.c tb.li m.1 m.2 m.3 m.4
 #> 1    1    e     9   1   0   0   0
 #> 2    1    0     0   0   1   0   0
