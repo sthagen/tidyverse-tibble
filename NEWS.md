@@ -1,15 +1,30 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# tibble 3.2.0.9001
+# tibble 3.2.1.9003
 
-- Merged cran-3.2.0 into main.
+- Merged cran-3.2.1 into main.
 
 
-# tibble 3.2.0.9000
+# tibble 3.2.1.9002
 
-## Chore
+- Internal changes only.
 
-- Ignore revdep packages that take too long.
+
+# tibble 3.2.1.9001
+
+- Merge pull request #1527 from tidyverse/snapshot-main-rcc-smoke-null.
+
+
+# tibble 3.2.1.9000
+
+- Internal changes only.
+
+
+# tibble 3.2.1
+
+## Internal
+
+- Use symbol instead of string in `.Call()`.
 
 
 # tibble 3.2.0
