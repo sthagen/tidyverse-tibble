@@ -74,6 +74,10 @@ as_tibble.data.frame <- function(x, validate = NULL, ...,
     deprecate_stop("2.0.0", "tibble::as_tibble(validate = )", "as_tibble(.name_repair =)")
   }
 
+  if (!identical(class(x), "data.frame") && !inherits(x, "tbl_df")) {
+    x <- as.data.frame(x)
+  }
+
   old_rownames <- raw_rownames(x)
   if (is.null(.rows)) {
     .rows <- nrow(x)
