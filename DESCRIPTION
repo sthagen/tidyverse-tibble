@@ -1,6 +1,6 @@
 Package: tibble
 Title: Simple Data Frames
-Version: 3.2.1.9018
+Version: 3.2.1.9019
 Authors@R: 
     c(person(given = "Kirill",
              family = "M\u00fcller",
@@ -46,8 +46,6 @@ Suggests:
     brio,
     callr,
     cli,
-    covr,
-    crayon (>= 1.3.4),
     DiagrammeR,
     dplyr,
     evaluate,
@@ -58,9 +56,7 @@ Suggests:
     htmltools,
     knitr,
     lubridate,
-    mockr,
     nycflights13,
-    pkgbuild,
     pkgload,
     purrr,
     rmarkdown,
