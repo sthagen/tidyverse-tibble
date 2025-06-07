@@ -1,6 +1,6 @@
 Package: tibble
 Title: Simple Data Frames
-Version: 3.2.1.9055
+Version: 3.3.0
 Authors@R: 
     c(person(given = "Kirill",
              family = "M\u00fcller",
@@ -19,8 +19,7 @@ Authors@R:
              family = "Bryan",
              role = "ctb",
              email = "jenny@rstudio.com"),
-      person(given = "RStudio",
-             role = c("cph", "fnd")))
+      person("Posit Software, PBC", role = c("cph", "fnd"), comment = c(ROR = "03wc8by49")))
 Description: Provides a 'tbl_df' class (the 'tibble') with stricter checking and better formatting than the traditional
     data frame.
 License: MIT + file LICENSE
@@ -75,3 +74,4 @@ Config/autostyle/scope: line_breaks
 Config/autostyle/strict: true
 Config/autostyle/rmd: false
 Config/Needs/website: tidyverse/tidytemplate
+Config/usethis/last-upkeep: 2025-06-07

@@ -40,3 +40,6 @@
 ^\.gitpod\.yml$
 ^tests/testthat/helper-sync\.R$
 ^index\.md$
+^\.cache$
+^compile_commands\.json$
+^[\.]?air\.toml$
