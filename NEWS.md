@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tibble 3.3.1.9021
+
+## Continuous integration
+
+- Lock down `format-suggest` egress (audit → block).
+
+
 # tibble 3.3.1.9020
 
 ## Bug fixes
