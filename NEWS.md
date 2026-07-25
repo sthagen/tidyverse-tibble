@@ -1,5 +1,46 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tibble 3.3.1.9021
+
+## Continuous integration
+
+- Lock down `format-suggest` egress (audit → block).
+
+
+# tibble 3.3.1.9020
+
+## Bug fixes
+
+- Replace deprecated `.Names` in `structure()` test call.
+
+  R-devel deprecated the special `structure()` argument `.Names`, so the
+  `new_tibble()` test in `test-new.R` triggered both a runtime
+  `.Deprecated()` warning and a "checking R code for possible problems"
+  NOTE ("Found calls to structure() using deprecated special names"),
+  failing R CMD check on R-devel. Use `names` instead, which is
+  behavior-identical across all R versions.
+
+  Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+  Claude-Session: https://claude.ai/code/session_016BRYo2D5L4wpgaTFTHH2B7
+
+### ci
+
+- Emit empty package matrix when there are no (rev)deps.
+
+## Uncategorized
+
+- Ci: Harden `format-suggest` against `pull_request_target` pwn requests (#93).
+
+
+# tibble 3.3.1.9019
+
+## Continuous integration
+
+- Run on Ubuntu 26.04.
+
+- Align workflows with template.
+
+
 # tibble 3.3.1.9018
 
 ## Chore
