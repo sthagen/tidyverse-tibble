@@ -1,5 +1,59 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tibble 3.3.1.9025
+
+## Continuous integration
+
+- Wrap the commit status update into an action.
+
+- Route ccache through one-word compiler wrappers on Unix.
+
+- Name every step and restore the log entry `setup-pandoc` swallows.
+
+
+# tibble 3.3.1.9024
+
+## Continuous integration
+
+- Add sharded `revdep2` workflow.
+
+## Uncategorized
+
+- Ci: Harden `workflow_run` workflows against untrusted pull requests (#106).
+
+- Ci: Pin third-party actions to commits and let Renovate keep them pinned (#105).
+
+
+# tibble 3.3.1.9023
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/tidyverse/tibble/actions/runs/30974941843
+
+## Continuous integration
+
+- Remove unused pr-commands workflow.
+
+## Uncategorized
+
+- Ci: Give every workflow and job an explicit `permissions` block (#103).
+
+- Ci: Pass workflow context through the environment, not into script text (#102).
+
+- Ci: Add a Windows arm64 (`windows-11-arm`) check on R-release (#99).
+
+
+# tibble 3.3.1.9022
+
+- Ci: Run all smoke-test checks even when one fails (#97).
+
+- Ci: Apply matrix `env` vars in the workflow, not in custom actions (#95).
+
+- Ci: Link the responsible workflow run in snapshot update PRs (#96).
+
+
 # tibble 3.3.1.9021
 
 ## Continuous integration
