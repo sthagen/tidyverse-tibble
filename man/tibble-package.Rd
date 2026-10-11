@@ -12,15 +12,13 @@ Provides a 'tbl_df' class (the 'tibble') with stricter checking and better forma
 \details{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
-The tibble package provides utilities for handling \strong{tibbles}, where
-"tibble" is a colloquial term for the S3 \code{\link{tbl_df}} class. The \code{\link{tbl_df}}
-class is a special case of the base \code{\link[base:data.frame]{data.frame}}
-class, developed in response to lessons learned over many years of data
-analysis with data frames.
+The tibble package provides utilities for handling \strong{tibbles},
+where "tibble" is a colloquial term for the S3 \code{\link{tbl_df}} class.
+The \code{\link{tbl_df}} class is a special case of the base \code{\link[base:data.frame]{data.frame}} class,
+developed in response to lessons learned over many years of data analysis with data frames.
 
-Tibble is the central data structure for the set of packages known as the
-\href{https://tidyverse.org/packages/}{tidyverse}, including
-\href{https://dplyr.tidyverse.org/}{dplyr},
+Tibble is the central data structure for the set of packages known as the \href{https://tidyverse.org/packages/}{tidyverse},
+including \href{https://dplyr.tidyverse.org/}{dplyr},
 \href{https://ggplot2.tidyverse.org/}{ggplot2},
 \href{https://tidyr.tidyverse.org/}{tidyr}, and
 \href{https://readr.tidyverse.org/}{readr}.
@@ -28,9 +26,8 @@ Tibble is the central data structure for the set of packages known as the
 General resources:
 \itemize{
 \item Website for the tibble package: \url{https://tibble.tidyverse.org}
-\item \href{https://adv-r.hadley.nz/vectors-chap.html}{Vectors chapter} in \emph{Advanced R}
-(2nd edition), specifically the
-\href{https://adv-r.hadley.nz/vectors-chap.html#tibble}{Data frames and tibbles section}
+\item \href{https://adv-r.hadley.nz/vectors-chap.html}{Vectors chapter} in \emph{Advanced R} (2nd edition),
+specifically the \href{https://adv-r.hadley.nz/vectors-chap.html#tibble}{Data frames and tibbles section}
 }
 
 Resources on specific topics:
@@ -56,13 +53,13 @@ Useful links:
 Authors:
 \itemize{
   \item Kirill Müller \email{kirill@cynkra.com} (\href{https://orcid.org/0000-0002-1416-3412}{ORCID})
-  \item Hadley Wickham \email{hadley@rstudio.com}
+  \item Hadley Wickham \email{hadley@posit.co}
 }
 
 Other contributors:
 \itemize{
   \item Romain Francois \email{romain@r-enthusiasts.com} [contributor]
-  \item Jennifer Bryan \email{jenny@rstudio.com} [contributor]
+  \item Jennifer Bryan \email{jenny@posit.co} [contributor]
   \item Posit Software, PBC (\href{https://ror.org/03wc8by49}{ROR}) [copyright holder, funder]
 }
 

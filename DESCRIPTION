@@ -1,12 +1,12 @@
 Package: tibble
 Title: Simple Data Frames
-Version: 3.3.1.9028
+Version: 3.3.1.9032
 Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),
-    person("Hadley", "Wickham", , "hadley@rstudio.com", role = "aut"),
+    person("Hadley", "Wickham", , "hadley@posit.co", role = "aut"),
     person("Romain", "Francois", , "romain@r-enthusiasts.com", role = "ctb"),
-    person("Jennifer", "Bryan", , "jenny@rstudio.com", role = "ctb"),
+    person("Jennifer", "Bryan", , "jenny@posit.co", role = "ctb"),
     person("Posit Software, PBC", role = c("cph", "fnd"),
            comment = c(ROR = "03wc8by49"))
   )
@@ -56,6 +56,7 @@ VignetteBuilder:
 Config/autostyle/rmd: false
 Config/autostyle/scope: line_breaks
 Config/autostyle/strict: true
+Config/Needs/readme: data.table
 Config/Needs/website: tidyverse/tidytemplate
 Config/testthat/edition: 3
 Config/testthat/parallel: true
@@ -63,4 +64,4 @@ Config/testthat/start-first: vignette-formats, as_tibble, add, invariants
 Config/usethis/last-upkeep: 2025-06-07
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.1.0.9000
+Config/roxygen2/version: 8.1.1.9000
